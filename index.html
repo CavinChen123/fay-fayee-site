@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAY FAYEE | 本地服装独立站</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header" aria-label="主导航">
+      <a class="brand" href="#top" aria-label="FAY FAYEE 首页">FAY FAYEE</a>
+      <nav class="nav-links" aria-label="页面导航">
+        <a href="#new">上新</a>
+        <a href="#lookbook">搭配</a>
+        <a href="#visit">到店</a>
+      </nav>
+      <button class="bag-button" id="openBag" type="button">
+        <span>购物袋</span>
+        <strong id="bagCount">0</strong>
+      </button>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="heroTitle">
+        <picture>
+          <source srcset="assets/look-denim.jpg" media="(min-width: 760px)" />
+          <img src="assets/look-denim.jpg" alt="模特穿着深蓝牛仔套装坐在复古房间里" />
+        </picture>
+        <div class="hero-shade"></div>
+        <div class="hero-copy">
+          <p class="eyebrow">Local boutique / Spring edit</p>
+          <h1 id="heroTitle">FAY FAYEE</h1>
+          <p class="hero-lead">复古牛仔、手作刺绣、轻松但有记忆点的日常穿搭。</p>
+          <div class="hero-actions">
+            <a class="primary-link" href="#new">查看上新</a>
+            <a class="secondary-link" href="#visit">预约到店</a>
+          </div>
+        </div>
+        <div class="drop-strip" aria-label="本季关键词">
+          <span>Denim blue</span>
+          <span>Tomato red</span>
+          <span>Handmade texture</span>
+          <span>Weekend fit</span>
+        </div>
+      </section>
+
+      <section class="section intro-band" aria-label="店铺定位">
+        <div>
+          <p class="eyebrow dark">Curated in store</p>
+          <h2>把线下小店的试穿氛围，搬到屏幕第一眼。</h2>
+        </div>
+        <p>页面先聚焦“好看、想买、想来店里试”，保留独立站最关键的销售入口：商品展示、加购、尺码、到店联系。</p>
+      </section>
+
+      <section class="section product-section" id="new" aria-labelledby="newTitle">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow dark">New arrival</p>
+            <h2 id="newTitle">今日精选</h2>
+          </div>
+          <div class="filter-pills" aria-label="商品筛选">
+            <button class="pill active" type="button" data-filter="all">全部</button>
+            <button class="pill" type="button" data-filter="set">套装</button>
+            <button class="pill" type="button" data-filter="top">上装</button>
+            <button class="pill" type="button" data-filter="accessory">配饰感</button>
+          </div>
+        </div>
+
+        <div class="product-grid" id="productGrid"></div>
+      </section>
+
+      <section class="lookbook" id="lookbook" aria-labelledby="lookTitle">
+        <div class="lookbook-copy">
+          <p class="eyebrow dark">Lookbook</p>
+          <h2 id="lookTitle">三套能立刻记住的小店风格。</h2>
+          <p>用真实样品图做主视觉，不堆砌模板感。产品照片越生活化，独立站越像一家有人在认真挑衣服的小店。</p>
+        </div>
+        <div class="lookbook-wall" aria-label="搭配图片墙">
+          <figure class="look-tall">
+            <img src="assets/look-vest.jpg" alt="针织帽与条纹马甲搭配" />
+            <figcaption>Soft vest, loose pants</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/look-tomato-tee.jpg" alt="番茄刺绣白色 T 恤细节" />
+            <figcaption>Tomato embroidery tee</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/look-denim.jpg" alt="深蓝牛仔套装整体搭配" />
+            <figcaption>Denim weekend set</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="visit-band" id="visit" aria-labelledby="visitTitle">
+        <div>
+          <p class="eyebrow">Visit the shop</p>
+          <h2 id="visitTitle">线上先种草，线下再试穿。</h2>
+        </div>
+        <form class="visit-form" aria-label="到店预约表单">
+          <label>
+            <span>姓名</span>
+            <input type="text" name="name" placeholder="你的称呼" />
+          </label>
+          <label>
+            <span>联系方式</span>
+            <input type="tel" name="phone" placeholder="手机号或微信" />
+          </label>
+          <button type="submit">预约试穿</button>
+        </form>
+      </section>
+    </main>
+
+    <aside class="bag-panel" id="bagPanel" aria-hidden="true" aria-label="购物袋">
+      <div class="bag-backdrop" id="closeBagBackdrop"></div>
+      <div class="bag-drawer" role="dialog" aria-modal="true" aria-labelledby="bagTitle">
+        <div class="bag-head">
+          <h2 id="bagTitle">购物袋</h2>
+          <button class="icon-button" id="closeBag" type="button" aria-label="关闭购物袋">×</button>
+        </div>
+        <div class="bag-items" id="bagItems"></div>
+        <div class="bag-footer">
+          <div>
+            <span>合计</span>
+            <strong id="bagTotal">¥0</strong>
+          </div>
+          <button type="button" id="checkoutButton">提交订单</button>
+        </div>
+      </div>
+    </aside>
+
+    <script src="script.js"></script>
+  </body>
+</html>
